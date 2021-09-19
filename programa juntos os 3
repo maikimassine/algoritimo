@@ -1,0 +1,123 @@
+programa
+{
+
+	funcao inicio()
+	{
+		inteiro opcao = 0
+		escreva("Selecione op:")	
+		leia(opcao)
+
+		escolha(opcao){
+			caso 1:
+				p1()
+				pare
+			caso 2:
+				p2()
+				pare
+			caso 3:
+				p3()
+				pare
+			caso contrario:
+				escreva("Opção invalida")
+		}
+	}
+
+	funcao p1(){
+		escreva("Programa 1")
+		logico continua = verdadeiro
+	
+
+        enquanto(continua == verdadeiro){
+             
+            	inteiro mes
+        		escreva("\n\nINSIRA UM NUMERO DE 1 A 12 PARA VER O DIA DA SEMANA E 0 PARA SAIR: ")
+        		leia(mes)
+              escolha(mes)
+              {	
+                caso 0: 
+                escreva("Você saiu do sistema :(")
+                continua = falso
+                pare
+                caso 1: escreva("Mês Janeiro")
+                pare
+    			caso 2: escreva("Mês Fevereiro")
+    			pare
+    			caso 3: escreva("Mês Março")
+    			pare
+    			caso 4: escreva("Mês Abril")
+    			pare
+    			caso 5: escreva("Mês Maio")
+    			pare
+    			caso 6: escreva("Mês Junho")
+    			pare
+    			caso 7: escreva("Mês Julho")
+    			pare
+    			caso 8: escreva("Mês Agosto")
+    			pare
+    			caso 9: escreva("Mês Setembro")
+    			pare
+    			caso 10: escreva("Mês Outubro")
+    			pare
+    			caso 11: escreva("Mês Novembro")
+    			pare
+    			caso 12: escreva("Mês Desembro")
+    			pare
+    			
+    			
+    			caso contrario: escreva("Escolha um número valido")
+                
+            }
+            
+        }
+	}
+
+	funcao p2(){
+		escreva("Programa 2")
+		real peso, peso1, peso2
+		escreva("\nDigite seu peso: ")
+		leia(peso)
+	    peso1 = peso + (peso * 0.10)
+
+		escreva("\nSeu peso mais 10% é: ", peso1)
+
+		peso2 = peso + (peso * 0.20)
+		escreva ("\nSeu peso mais 20% é: ", peso2)
+	}
+
+	funcao p3(){
+		escreva("Programa 3")
+		caracter continua
+	     real salario_B, salario_L, primeiro, segundo, total_E, total_D, total_T = 300 
+
+	    faca 
+	      {
+	          limpa()
+	          escreva ("informe o salario:")
+		     leia (salario_B)
+		     
+		     primeiro = (salario_B / 100) * 10 
+		     escreva ("Primeiro emprestimo...: ", primeiro)
+		     
+		     segundo = (salario_B - primeiro) / 100 * 20
+		     escreva ("\nSegundo emprestimo....: ", segundo)
+		     
+		     total_E = primeiro + segundo
+		     escreva ("\nTotal de emprestimo...: ", total_E)
+		     
+		     escreva ("\nTotal de transporte...: ", total_T)
+		     total_D = total_E + total_T
+		     
+		     escreva ("\nTotal de desconto.....: ", total_D)
+		     salario_L = salario_B - total_D
+		     
+		     escreva ("\nSalario Liquido.......: ", salario_L)		    
+		            		        
+		     	escreva("\nDigite uma opção para prosseguir ")
+		     	
+		     	leia(continua)
+	      }
+		enquanto (continua == 's')
+	    
+	    escreva ("\nO progama foi finalizado")
+	}
+}
