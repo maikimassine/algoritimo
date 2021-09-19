@@ -1,0 +1,18 @@
+programa
+{
+	
+	funcao inicio()
+	{
+	real peso, peso1, peso2
+		escreva("\nDigite seu peso: ")
+		leia(peso)
+	    peso1 = peso + (peso * 0.10)
+
+		escreva("\nSeu peso mais 10% é: ", peso1)
+
+		peso2 = peso + (peso * 0.20)
+		escreva ("\nSeu peso mais 20% é: ", peso2)
+
+	}
+	
+}
