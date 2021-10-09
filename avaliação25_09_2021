@@ -7,13 +7,14 @@ programa{
 		  para(inteiro x=0; x<10; x++){
                numeros[x] = util.sorteia(1, 20)
                escreva(x+1,"º número sorteado: ",numeros[x],"\n")
+               limpa()
            } 
 		 escreva("\nMENU\n")
-           escreva("1 - Somar Pares\n")
-           escreva("2 - Somar Ímpares\n")
-           escreva("3 - Somar Entre 6 e 14\n")
-           escreva("4 - Gerar Vetor na Ordem Inversa\n")
-           escreva("5 - Gerar Vetor Copiar Valores Sem Repitir\n")
+           escreva("1 - Soma Pares\n")
+           escreva("2 - Soma Ímpares\n")
+           escreva("3 - Soma Entre 6 e 14\n")
+           escreva("4 - Gera Vetor na Ordem Inversa\n")
+           escreva("5 - Gera Vetor Copiar Valores Sem Repitir\n")
            escreva("9 final")
 		faca{
 				
