@@ -1,0 +1,36 @@
+programa{
+    inclua biblioteca Util --> u
+    caracter continue = ' '
+    funcao inicio(){
+        faca{
+        	inteiro a[5], b[5], c[5]
+		
+		para (inteiro x =0; x < 5; x++){
+		escreva("\nInforme o " ,x+1,"º Informe o valor da conta e o saldo inicial\n")
+		leia(a[x])
+		}
+	limpa()
+	para (inteiro x =0; x < 5; x++){
+		escreva("\nInforme o " ,x+1,"º Valor da vetor B")
+		leia(b[x])
+		c[x] = a[x] + b[x]
+		}
+	limpa()
+	escreva("[")
+	para (inteiro x =0; x < 5; x++){
+		escreva(c[x],"\t")
+		leia(a[x])
+		}
+	escreva("]")
+
+            corpo()
+            escreva("Deseja continuar?")
+            leia(continue)
+            
+        }
+        enquanto(continue == 's')
+    }
+
+    funcao corpo(){
+    }
+}
