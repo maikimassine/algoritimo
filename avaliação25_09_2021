@@ -1,20 +1,20 @@
 programa{
-	inclua biblioteca Util --> u
+	inclua biblioteca Util --> util
 	inteiro numeros[10], numeroDigitado = 0
 	caracter continue = 's'
 	funcao inicio(){
 		
 		  para(inteiro x=0; x<10; x++){
-               numeros[x] = u.sorteia(1, 20)
+               numeros[x] = util.sorteia(1, 20)
                escreva(x+1,"º número sorteado: ",numeros[x],"\n")
            } 
-		 escreva("\n****MENU****\n")
+		 escreva("\nMENU\n")
            escreva("1 - Somar Pares\n")
            escreva("2 - Somar Ímpares\n")
            escreva("3 - Somar Entre 6 e 14\n")
            escreva("4 - Gerar Vetor na Ordem Inversa\n")
            escreva("5 - Gerar Vetor Copiar Valores Sem Repitir\n")
-           escreva("9 - FINALIZAR\n")
+           escreva("9 final")
 		faca{
 				
 			leia(numeroDigitado)
@@ -75,7 +75,7 @@ programa{
 			
 		}
 
-		escreva("A soma dos números entre 6 e 14 é: ", somaParcial)
+		escreva("Soma dos números entre 6 e 14 é: ", somaParcial)
 	}
 
 	funcao atividade4(){
@@ -85,7 +85,7 @@ programa{
 			inverso[indiceInverso] = numeros[x]
 			indiceInverso--	
 		}
-		escreva("\nVetores na ordem inversa\n")
+		escreva("\nVetores na orden invertida\n")
 		para(inteiro x=0; x<10; x++){ 
 			escreva(inverso[x],"\n")
 		}
