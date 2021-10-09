@@ -20,19 +20,19 @@ programa{
 			leia(numeroDigitado)
 
 			se(numeroDigitado == 1){
-				atividade1()
+				ativ01()
 			}
 			se(numeroDigitado == 2){
-				atividade2()
+				ativ02()
 			}
 			se(numeroDigitado == 3){
-				atividade3()
+				ativ03()
 			}
 			se(numeroDigitado == 4){
-				atividade4()
+				ativ04()
 			}
 			se(numeroDigitado == 5){
-				atividade5()
+				ativ05()
 			}
 			
 			
@@ -44,7 +44,7 @@ programa{
 	
 
 
-     funcao atividade1(){
+     funcao ativ01(){
      	inteiro somaPares = 0
 		para(inteiro x=0; x<10; x++){
 			se(numeros[x]%2 == 0){ 
@@ -55,7 +55,7 @@ programa{
 		escreva("A soma dos números pares é: ",somaPares,"\n")
 	}
 
-	funcao atividade2(){
+	funcao ativ02(){
      	inteiro somaImpares = 0
 		para(inteiro x=0; x<10; x++){
 			se(numeros[x]%2 == 1){ 
@@ -66,7 +66,7 @@ programa{
 		escreva("A soma dos números impares é: ",somaImpares,"\n")
 	}
 
-	funcao atividade3(){
+	funcao ativ03(){
 		inteiro somaParcial = 0
 		para(inteiro x=0; x<10; x++){
 			se(numeros[x]>=6 e numeros[x]<=14){
@@ -78,7 +78,7 @@ programa{
 		escreva("Soma dos números entre 6 e 14 é: ", somaParcial)
 	}
 
-	funcao atividade4(){
+	funcao ativ04(){
 		inteiro inverso[10]
 		inteiro indiceInverso = 9
 		para(inteiro x=0; x<10; x++){ 
@@ -92,7 +92,7 @@ programa{
 		
 	}
 
-	funcao atividade5(){
+	funcao ativ05(){
 		inteiro numerosDiferentes[10]
 		para(inteiro x=0; x<10; x++){
 			numerosDiferentes[x] = numeros[x]
