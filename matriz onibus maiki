@@ -1,0 +1,156 @@
+/*
+IInformações sobre a identificação do ônibus
+1 – Destino
+2 – Número do ônibus
+3 – Valor da passagem
+
+Informações a serem oferecidas sobre a ocupação do ônibus
+1 – Total de poltronas reservadas
+2 – Total de poltronas disponíveis
+3 – Receita total bruta com as poltronas reservadas
+4 – Total de operações de cancelamento realizadas
+
+Opções a serem disponibilizadas para a boa gestão de vendas de passagens.
+1 – Reservar
+2 – Cancelar
+3 – Listagem de Ocupações / Disponibilidade
+4 – Listagem Geral
+5 – Resumo de Ocupação
+9 – Finalizar
+
+*/
+
+programa
+{
+    //variaveis globais
+    
+    //informações do onibus
+    real passagem = 3.80 // valor da passagem
+    cadeia destino = "Casa" // viajem
+    inteiro numero = 1400 // numero do onibus
+    caracter continue
+    
+    //informações sobre a ocupação do onibus
+    inteiro totalPoltronas = 5
+    inteiro totalDisponiveis = 5
+    inteiro totalCancelamento = 0
+    inteiro ocupadas = 0
+    
+	funcao inicio()
+	{
+		infonibus()  // Chama o procedimento
+	    
+	    inteiro opcao
+	    inteiro menu = 0
+	    enquanto (menu == 0){
+	    //menu
+	    escreva("Informe a opção desejada")		
+	    escreva("\n[1]Reservar      [2]Cancelar \n[3]Listagem de Ocupações/Disponibilidade    [4]Listagem Geral \n[5]Resumo da Ocupação    [9]Finalizar:\n") 		
+        leia (opcao)
+        
+        escolha (opcao){
+            caso 1:
+            reservar()
+            pare
+            caso 2:
+            cancelar()
+            pare
+            caso 3:
+            listaocupacaodisponibilidade()
+            pare
+            caso 4:
+            listargeral()
+            pare
+            caso 5:
+            resumoocupacao()
+            pare
+            caso 9:
+            menu = 1
+            pare
+            caso contrario:
+            escreva ("Digite uma opção Válida \n")
+        }
+	    }
+        
+	    // Chama o procedimento
+	}
+
+	funcao infonibus()
+	{
+	    //imprimindo as informações do ônibus
+		escreva ("O valor da passagem é: ", passagem, "\n") 
+		escreva ("O destino do Ônibus é: ", destino, "\n") 
+		escreva ("A numeração do Ônibus é: ", numero, "\n")
+		// Insere uma linha após do texto da mensagem
+		para(inteiro i = 0; i < 50; i++)
+		{
+		  escreva ("-")
+		}
+
+		escreva("\n")
+	}
+
+	// Função que realiza um cálculo e retorna o resultado
+	funcao vazio reservar()
+	{
+	    inteiro reserva
+		
+		escreva ("Vagas disponiveis:", totalDisponiveis)
+		escreva ("\n Quantas vagas você deseja Reservar?\n")
+		leia(reserva)
+		
+		//testando a quantidade de reservas disponiveis
+		se (reserva <= totalDisponiveis e reserva > 0){
+		    escreva ("Reserva efetua com sucesso!\n")
+		    totalDisponiveis = totalDisponiveis - reserva
+		    ocupadas = ocupadas + reserva
+		
+		}senao{
+		    escreva ("Não foi possível reservar essa quantidade.\n Temos apenas ",totalDisponiveis," de Vagas. \n")
+		}
+	}
+	
+	funcao vazio cancelar()
+	{
+	    inteiro cancela
+	    
+	    se (ocupadas == 0){
+	        escreva  ("Nenhuma vaga ainda foi reservada, portanto o não é necessário fazer cancelamento. \n")
+	    } senao {
+	        escreva ("Quantas vagas deseja cancelar?\n")
+	        leia(cancela)
+	        
+	        se(cancela > totalDisponiveis){
+	            escreva ("Não é possível cancelar, pois o valor informado é maior que o reservado")
+	        } 
+	        se (cancela == 0){
+	            escreva ("Não é possível cancelar")
+	        }senao{
+	            totalDisponiveis = totalDisponiveis + cancela
+	            totalCancelamento = totalCancelamento + cancela
+	            ocupadas = ocupadas - cancela
+	            escreva ("Cancelamento efetuado.")
+	        }
+	    }
+	}
+	
+	funcao vazio listaocupacaodisponibilidade()
+	{
+	    escreva ("Total de vagas ocupadas: ", ocupadas, "\n Total de vagas disponiveis: ", totalDisponiveis, "\n")
+	}
+	
+	funcao vazio listargeral(){
+	    escreva ("Total de poltronas: ", totalPoltronas, "\n Total disponiveis: ", totalDisponiveis, "\n Total Ocupadas: ", ocupadas,"\n")
+	    escreva ("Total de cancelamentos: ", totalCancelamento, "\n Total receita bruta poltronas reservardas: ",(passagem * ocupadas),"\n")
+	    
+	}
+	
+	
+	funcao vazio resumoocupacao(){
+	    escreva ("Ao todo: ", ocupadas, " de poltronas estão reservadas e foram feitos ", totalCancelamento, " de cancelamentos \n")
+	
+	}
+	
+	
+}
+
