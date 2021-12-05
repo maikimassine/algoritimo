@@ -1,0 +1,142 @@
+import os
+
+
+
+def Lanches():
+    global tLanches
+    global qtdLanche
+    lan = True
+    while(lan == True):
+        print("***********************************")
+        print("***     Lanchonete Coma Bem     ***") 
+        print("***           Lanches           ***") 
+        print("***********************************\n")
+        print("Selecione uma opção\n")
+        for p in range(len(nomeLanches)):
+            print(
+                str(p+1)+". "+nomeLanches[p]+"R$ ",valorLanches[p]
+            )
+        print("\n9. Finalizar Lanches...\n")  
+        opc =  int(input("escolha o lanche desejado:")) 
+
+        if(opc == 9):
+            os.system('cls') or None
+            lan = False
+        elif(opc == 1 or 
+             opc == 2 or 
+             opc == 3 or 
+             opc == 4 or 
+             opc == 5):
+            inQtd = int(input("Insira a quantidade: "))
+            qtdLanche += inQtd
+            tLanches += valorLanches[opc-1] * qtdLanche
+            os.system('cls') or None
+            print("Lanche adicionado!!!!Total\n\n\n") 
+        else:
+            os.system('cls') or None
+            print("Opção inválida!!!!\n\n\n") 
+
+
+def Refrigerante():
+    global tRefri
+    global qtdRefri
+    lan = True
+    while(lan == True):
+        print("***********************************")
+        print("***     Lanchonete Coma Bem     ***") 
+        print("***           Bebidas           ***") 
+        print("***********************************\n")
+        print("Selecione uma opção\n")
+        for p in range(len(nomeRefri)):
+            print(
+                str(p+1)+". "+nomeRefri[p]+"R$ ",valorRefri[p]
+            )
+        print("\n9. Finalizar Bebidas...\n")  
+        opc =  int(input("escolha a Bebida  desejada:")) 
+
+        if(opc == 9):
+            os.system('cls') or None
+            lan = False
+        elif(opc == 1 or 
+             opc == 2 or 
+             opc == 3 or 
+             opc == 4 or 
+             opc == 5 or
+             opc == 6 or
+             opc == 7 ):
+            inQtd = int(input("Insira a quantidade: "))
+            qtdRefri += inQtd
+            tRefri += valorRefri[opc-1] * qtdRefri
+            os.system('cls') or None
+            print("Lanche adicionado!!!!\n\n\n") 
+        else:
+            os.system('cls') or None
+            print("Opção inválida!!!!\n\n\n") 
+
+def Resumo():
+    print("***********************************")
+    print("***     Resumo do Pedido    ***") 
+    print("***********************************\n\n")
+
+    print(
+        "Total de Lanches..: "+ str(qtdLanche)+
+        "\nValor dos Lanches.: "+ str(tLanches)+
+        "\nTotal de Bebidas..: "+ str(qtdRefri)+
+        "\nValor das Bebidas.: "+ str(tRefri)+
+        "\n\nTotal do Pedido...: "+str(tRefri + tLanches)
+    )
+
+    val = input("\n\nPressione ENTER para Prosseguir...")
+    os.system('cls') or None
+
+
+
+
+
+nomeLanches = ['Bauru.............', 'X-Salada..........', 'X-Frango..........', 'X-Tudo............',
+             'Cachorro-Quente...'
+]
+valorLanches = [4.0, 6.0, 7.0, 8.0, 3.0]
+
+nomeRefri = ['Refrigerante Lata......', 'Refrigerante 600ml.....', 'Suco natural (Laranja).',
+            'Suco de Poupa..........', 'Água de Coco/copo......', 'Água com/sem Gás.......', 
+            'Cerveja Lata...........'
+ ]
+valorRefri = [4.5, 6.0, 4.0, 3.0, 2.0, 1.2, 5.0]
+
+programa = True
+
+tLanches = 0
+tRefri = 0
+qtdLanche = 0
+qtdRefri = 0
+
+while(programa == True):
+    print("***********************************")
+    print("***     Lanchonete Coma Bem     ***") 
+    print("***********************************\n")
+    print("Selecione uma opção\n")
+    print(
+        " 1. Lanches\n",
+        "2. Bebidas\n",
+        "3.Consultar/Fechar\n\n",
+        "9.Finalizar o programa\n\n"
+    )
+    opc = int(input("Informe a opção desejada\n"))
+
+    if(opc == 9):
+        programa = False
+        os.system('cls') or None
+        print("Pedido finalizado!!!!! Total a pagar R$"+str(tRefri + tLanches)+".\nPor favor acertar no caixa.")
+    elif(opc == 1):
+        os.system('cls') or None
+        Lanches()
+    elif(opc == 2):
+        os.system('cls') or None
+        Refrigerante()
+    elif(opc == 3):
+        os.system('cls') or None
+        Resumo()
+    else:
+        os.system('cls') or None
+        print("Opção inválida!!!!\n\n\n")
