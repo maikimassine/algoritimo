@@ -1,0 +1,65 @@
+import os
+import random
+
+setorPontos = [0,0,0,0,0]
+setorArreme = [0,0,0,0,0]
+saAcerto = [0,0,0,0,0]
+saErro = [0,0,0,0,0]
+tArremesso = 0
+
+def Arremesso():
+    global tArremesso
+    ss = random.randrange(1,5)
+    print("Setor Sorteado:",ss)
+    
+
+    aa = input("Acertou o arremesso?:")
+    print("\n\n")
+
+    if(aa == 's'):
+      saAcerto[ss] += 1
+      tArremesso += 1
+      setorPontos[ss] += 2
+      setorArreme[ss] += 1
+    elif(aa == 'n'):
+      saErro[ss] += 1
+      tArremesso += 1
+      setorArreme[ss] += 1
+    else:
+      print("Valor inválido.")
+
+    print("** Resumo do jogardor **")
+    print("Total de arremessos:",tArremesso)
+    print("total de pontos....:",setorPontos[1]+setorPontos[2]+setorPontos[3]+setorPontos[4])
+    print("total de arremessos Certos..:",saAcerto[1]+saAcerto[2]+saAcerto[3]+saAcerto[4])
+    print("total de arremessos Errados.:",saErro[1]+saErro[2]+saErro[3]+saErro[4])
+
+    print("---------------------------------------")
+    print("*         Resumo por Setor        *")
+    print("---------------------------------------")
+    
+    for _ in range(1,5):
+      print("Setor","- Arremessos:",setorArreme[],"  Pontos:",setorPontos[_])
+    print("\n\n")
+
+
+programa = True
+
+while(programa == True):
+  print("************")
+  print("*     Arremessos por setor     *")
+  print("************\n")
+  print("Selecione a opção\n")
+  print("1. Jogar\n")
+  print("9. Finalizar\n\n")
+  opc = int(input("Informe a opção desejada"))
+
+  if(opc == 1):
+    Arremesso()
+  elif(opc == 9):
+    os.system('cls') or None
+    programa = False
+    print("Programa finalizado")
+  else:
+    os.system('cls') or None
+    print("Opção inválida!!!\n\n")
